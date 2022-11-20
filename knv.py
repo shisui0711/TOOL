@@ -1,8 +1,8 @@
+import os
 try:
 	os.system('pip install requests && pip install bs4 && pip install pystyle && pip install pathlib && pip install colorama && pip install inquirer && pip install prettytable')
 except:
 	pass
-import os
 import json
 import threading
 from time import sleep
