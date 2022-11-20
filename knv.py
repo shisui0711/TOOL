@@ -71,8 +71,8 @@ dk()
 choose = int(input(sr+"Nhập Số : "))
 try:
     if choose == 1:
-        exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/toolspam_fullsource.py?token=GHSAT0AAAAAAB2UM3WTMYVEGRBGMFBNAZTYY32AS2Q").text)
+        exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/toolspam_fullsource.py").text)
     if choose == 2:
-        exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/bufshare_facebook.py?token=GHSAT0AAAAAAB2UM3WSRZGTDZPZTKMHLJ5SY32ARZQ").text)
+        exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/bufshare_facebook.py").text)
 except:
     pass
