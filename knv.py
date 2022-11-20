@@ -4,12 +4,8 @@ try:
 except:
 	os.system('pip install requests && pip install bs4 && pip install pystyle && pip install pathlib && pip install colorama && pip install inquirer && pip install prettytable')
 import json
-import threading
 from time import sleep
 import sys
-import uuid
-import random
-import socket
 import requests
 from pystyle import *
 key = (requests.get("https://pastebin.com/raw/xSWKZxu0").text)
