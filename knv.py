@@ -66,6 +66,7 @@ banner()
 dk()
 print(sr+"Nhập [1] Tool Spam Sms,Call]")
 print(sr+"Nhập [2] Tool Buff Share Ảo Facebook")
+print(sr+"Nhập [3] Tool Reg Page Profile")
 print()
 dk()
 choose = int(input(sr+"Nhập Số : "))
@@ -74,5 +75,7 @@ try:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/toolspam_fullsource.py").text)
     if choose == 2:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/bufshare_facebook.py").text)
+    if choose == 3:
+      exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/regpro5.py").text)
 except:
     pass
