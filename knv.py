@@ -8,12 +8,25 @@ from time import sleep
 import sys
 import requests
 from pystyle import *
-key = (requests.get("https://pastebin.com/raw/xSWKZxu0").text)
+from time import strftime
+ngay=int(strftime('%d'))
+key1=str(ngay*1246546+23472)
+key = 'NVK'+key1
+url = 'https://khangpro.site/key.html?key='+key
+token_link1s = 'c1a994eec33d0e0f31ed05afe1f42fb57dfc0202'
+link1s = requests.get(f'https://link1s.com/api?api={token_link1s}&url={url}').json()
+if link1s['status']=="error": 
+	print(link1s['message'])
+	quit()
+else:
+	link_key=link1s['shortenedUrl']
+key_pastebin = (requests.get("https://pastebin.com/raw/xSWKZxu0").text)
 def login():
     while True:
         banner()
+        print(sr+'Link Để Vượt Key Là: '+link_key)
         check_key=input(sr+"Nhập Key: ")
-        if check_key == key:
+        if check_key == key or check_key == key_pastebin:
             break
         print(sr+"Vui lòng liên hệ Admin để lấy key")
         sleep(1)
