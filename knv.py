@@ -55,5 +55,7 @@ try:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/bufshare_facebook.py").text)
     if choose == 3:
       exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/regpro5.py").text)
+    else:
+        print(sr+"Số vừa chọn không có chức năng")
 except:
-    pass
+    print(sr+"Vui lòng chọn đúng số")
