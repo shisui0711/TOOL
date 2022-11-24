@@ -19,13 +19,13 @@ def format_input(symbol, text):
 def banner():
         os.system("cls" if os.name == "nt" else "clear")
         banner = '''\n
-    ╔════════════════════════════════════════════════════════════════════════════════════╗
-    ║   ██   ██ ██   ██  █████  ███    ██  ██████   ║   ➽ Facebook : Nguyễn Văn Khang    ║ 
-    ║   ██  ██  ██   ██ ██   ██ ████   ██ ██        ║   ➽ Zalo : 0988655794              ║
-    ║   █████   ███████ ███████ ██ ██  ██ ██   ███  ║   ➽ Youtube : Shisui0711           ║
-    ║   ██  ██  ██   ██ ██   ██ ██  ██ ██ ██    ██  ║   ➽ Bản Quyền : Shisui0711         ║
-    ║   ██   ██ ██   ██ ██   ██ ██   ████  ██████   ║                                    ║
-    ╚════════════════════════════════════════════════════════════════════════════════════╝                                                                                             
+    ╔═════════════════════════════════╗
+    ║ ➽ Facebook : Nguyễn Văn Khang   ║ 
+    ║ ➽ Zalo : 0988655794             ║
+    ║ ➽ Youtube : Shisui0711          ║
+    ║ ➽ Bản Quyền : Shisui0711        ║
+    ║                                 ║
+    ╚═════════════════════════════════╝                                                                                             
                                \n\n'''
         print(Colorate.Vertical(Colors.DynamicMIX((Col.light_green, Col.light_blue)), Center.XCenter(banner)))
 class reg_pro5():

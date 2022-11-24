@@ -20,13 +20,13 @@ def login():
 def banner():
         os.system("cls" if os.name == "nt" else "clear")
         banner = '''\n
-    ╔════════════════════════════════════════════════════════════════════════════════════╗
-    ║   ██   ██ ██   ██  █████  ███    ██  ██████   ║   ➽ Facebook : Nguyễn Văn Khang    ║ 
-    ║   ██  ██  ██   ██ ██   ██ ████   ██ ██        ║   ➽ Zalo : 0988655794              ║
-    ║   █████   ███████ ███████ ██ ██  ██ ██   ███  ║   ➽ Youtube : Shisui0711           ║
-    ║   ██  ██  ██   ██ ██   ██ ██  ██ ██ ██    ██  ║   ➽ Bản Quyền : Shisui0711         ║
-    ║   ██   ██ ██   ██ ██   ██ ██   ████  ██████   ║                                    ║
-    ╚════════════════════════════════════════════════════════════════════════════════════╝                                                                                             
+    ╔═════════════════════════════════╗
+    ║ ➽ Facebook : Nguyễn Văn Khang   ║ 
+    ║ ➽ Zalo : 0988655794             ║
+    ║ ➽ Youtube : Shisui0711          ║
+    ║ ➽ Bản Quyền : Shisui0711        ║
+    ║                                 ║
+    ╚═════════════════════════════════╝                                                                                             
                                \n\n'''
         print(Colorate.Vertical(Colors.DynamicMIX((Col.light_green, Col.light_blue)), Center.XCenter(banner)))
 def dk():
@@ -42,7 +42,7 @@ sr = s+r+" "
 login()
 banner()
 dk()
-print(sr+"Nhập [1] Tool Spam Sms,Call]")
+print(sr+"Nhập [1] Tool Spam Sms,Call")
 print(sr+"Nhập [2] Tool Buff Share Ảo Facebook")
 print(sr+"Nhập [3] Tool Reg Page Profile")
 print()

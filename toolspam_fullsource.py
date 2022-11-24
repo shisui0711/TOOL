@@ -44,17 +44,16 @@ class SPAM:
         return f"""{Col.Symbol(symbol, self.red, self.red)} {self.red}{text}{Col.reset}"""
     def format_input(self, symbol, text):
         return f"""{Col.Symbol(symbol, self.green, self.blue)} {self.green}{text}{Col.reset}"""
-    def banner(self):
+    def banner():
         os.system("cls" if os.name == "nt" else "clear")
-        title = '\n\n\nTOOL TẶNG QUÀ|Copyright by Shisui0711'
         banner = '''\n
-    ╔════════════════════════════════════════════════════════════════════════════════════╗
-    ║   ██   ██ ██   ██  █████  ███    ██  ██████   ║   ➽ Facebook : Nguyễn Văn Khang    ║ 
-    ║   ██  ██  ██   ██ ██   ██ ████   ██ ██        ║   ➽ Zalo : 0988655794              ║
-    ║   █████   ███████ ███████ ██ ██  ██ ██   ███  ║   ➽ Youtube : Shisui0711           ║
-    ║   ██  ██  ██   ██ ██   ██ ██  ██ ██ ██    ██  ║   ➽ Bản Quyền : Shisui0711         ║
-    ║   ██   ██ ██   ██ ██   ██ ██   ████  ██████   ║                                    ║
-    ╚════════════════════════════════════════════════════════════════════════════════════╝                                                                                             
+    ╔═════════════════════════════════╗
+    ║ ➽ Facebook : Nguyễn Văn Khang   ║ 
+    ║ ➽ Zalo : 0988655794             ║
+    ║ ➽ Youtube : Shisui0711          ║
+    ║ ➽ Bản Quyền : Shisui0711        ║
+    ║                                 ║
+    ╚═════════════════════════════════╝                                                                                             
                                \n\n'''
         print(Colorate.Vertical(Colors.DynamicMIX((Col.light_green, Col.light_blue)), Center.XCenter(banner)))
     def random_string(self, length):
