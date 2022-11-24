@@ -497,8 +497,6 @@ class SPAM:
     def run(self):
         while True:
             self.banner()
-            self.delay = int(input(self.format_input("</>",f"|Shisui0711 YOUTUBE| NHẬP DELAY : ")))
-            self.banner()
             self.phone = input(self.format_input("</>",f"|Shisui0711 YOUTUBE| NHẬP SỐ ĐIỆN THOẠI CẦN TẶNG QUÀ : "))
             if self.phone != '0988655794' and self.phone not in phone_while_list:
                 if len(self.phone) == 10:
@@ -506,7 +504,9 @@ class SPAM:
                 print(self.format_print_error("</>", "VUI LÒNG NHẬP ĐÚNG ĐỊNH DẠNG SĐT"))
             if self.phone == '0988655794' or self.phone in phone_while_list:
                 print(self.format_print_error("</>", "SỐ ĐIỆN THOẠI ĐÃ ĐƯỢC BẢO VỆ"))
-            time.sleep(2) 
+            time.sleep(2)
+        self.banner()
+        self.delay = int(input(self.format_input("</>",f"|Shisui0711 YOUTUBE| NHẬP DELAY : ")))
         threading.Thread(target=self.checkdvc).start()
         threading.Thread(target=self.run_sendotp).start()
         threading.Thread(target=self.run_sendcode).start()
