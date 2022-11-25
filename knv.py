@@ -37,7 +37,7 @@ def banner():
     ║ ➽ Facebook : Nguyễn Văn Khang   ║ 
     ║ ➽ Zalo : 0988655794             ║
     ║ ➽ Youtube : Shisui0711          ║
-    ║ ➽ Bản Quyền : Shisui0711        ║
+    ║ ➽ Bản Quyền : Shisui0711        
     ╚═════════════════════════════════╝                                                                                             
                                \n\n'''
         print(Colorate.Vertical(Colors.DynamicMIX((Col.light_green, Col.light_blue)), Center.XCenter(banner)))
@@ -67,8 +67,6 @@ try:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/bufshare_facebook.py").text)
     if choose == 3:
       exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/regpro5.py").text)
-    else:
-        print(sr+"Số vừa chọn không có chức năng")
 except ValueError:
     print(sr+"Vui lòng chọn số nguyên")
 except:
