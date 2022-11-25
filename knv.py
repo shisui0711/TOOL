@@ -38,7 +38,6 @@ def banner():
     ║ ➽ Zalo : 0988655794             ║
     ║ ➽ Youtube : Shisui0711          ║
     ║ ➽ Bản Quyền : Shisui0711        ║
-    ║                                 ║
     ╚═════════════════════════════════╝                                                                                             
                                \n\n'''
         print(Colorate.Vertical(Colors.DynamicMIX((Col.light_green, Col.light_blue)), Center.XCenter(banner)))
@@ -55,19 +54,22 @@ sr = s+r+" "
 login()
 banner()
 dk()
-print(sr+"Nhập [1] Tool Spam Sms,Call")
+print(sr+"Nhập [1] Tool Tặng Quà")
 print(sr+"Nhập [2] Tool Buff Share Ảo Facebook")
 print(sr+"Nhập [3] Tool Reg Page Profile")
 print()
 dk()
 choose = int(input(sr+"Nhập Số : "))
-if choose == 1:
+try:
+    if choose == 1:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/toolspam_fullsource.py").text)
-if choose == 2:
+    if choose == 2:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/bufshare_facebook.py").text)
-if choose == 3:
+    if choose == 3:
       exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/regpro5.py").text)
-else:
+    else:
         print(sr+"Số vừa chọn không có chức năng")
-# except:
-#     print(sr+"Vui lòng chọn đúng số")
+except ValueError:
+    print(sr+"Vui lòng chọn số nguyên")
+except:
+    print(sr+"Lỗi không xác định")
