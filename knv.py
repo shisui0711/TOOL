@@ -61,14 +61,13 @@ print(sr+"Nhập [3] Tool Reg Page Profile")
 print()
 dk()
 choose = int(input(sr+"Nhập Số : "))
-try:
-    if choose == 1:
+if choose == 1:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/toolspam_fullsource.py").text)
-    if choose == 2:
+if choose == 2:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/bufshare_facebook.py").text)
-    if choose == 3:
+if choose == 3:
       exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/regpro5.py").text)
-    else:
+else:
         print(sr+"Số vừa chọn không có chức năng")
-except:
-    print(sr+"Vui lòng chọn đúng số")
+# except:
+#     print(sr+"Vui lòng chọn đúng số")

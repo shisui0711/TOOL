@@ -44,7 +44,7 @@ class SPAM:
         return f"""{Col.Symbol(symbol, self.red, self.red)} {self.red}{text}{Col.reset}"""
     def format_input(self, symbol, text):
         return f"""{Col.Symbol(symbol, self.green, self.blue)} {self.green}{text}{Col.reset}"""
-    def banner():
+    def banner(self):
         os.system("cls" if os.name == "nt" else "clear")
         banner = '''\n
     ╔═════════════════════════════════╗
