@@ -69,7 +69,7 @@ try:
     if choose == 3:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/regpro5.py").text)
     if choose == 4:
-        exec(requests.get('https://raw.githubusercontent.com/shisui0711/TOOL/main/endcode.py').text)
+        exec(requests.get('https://raw.githubusercontent.com/shisui0711/TOOL/main/encode.py').text)
 except ValueError:
     print(sr+"Vui lòng chọn số nguyên")
 except:
