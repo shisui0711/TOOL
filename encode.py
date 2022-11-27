@@ -61,7 +61,7 @@ class Hyperion:
         if ultrasafemode == True:
             randlines, shell, renlibs, renvars = False, False, False, False
 
-        p("Starting Hyperization.")
+        p("Bắt đầu mã hóa.")
 
         self.content = "exec('')\n\n" + content
 
@@ -73,58 +73,58 @@ class Hyperion:
         self.safemode = safemode
 
         if addbuiltins:
-            p("Adding the builtins...")
+            p("Thêm vào builtins...")
             self.AddBuiltins()
 
-        p("Creating default vars...")
+        p("Đang tạo biến mặc định...")
         self.CreateVars()
 
 
         if renlibs:
-            p("Renaming imported libraries...")
+            p("Đổi tên thư viện...")
             valid = self.RenameImports()
 
         if renvars and valid:
-            p("Renaming variables...")
+            p("Đổi tên biến...")
             self.RenameVars()
 
         self.strings = {}
 
         if obfcontent:
-            p("Obfuscating the content of each variable...")
+            p("Mã hóa nội dung từng biến...")
             self.ObfContent()
 
         if clean:
-            p("Cleaning the basic script!")
+            p("Thu gọn tập lệnh!")
             self.CleanCode()
 
         if not self._verify_lin(content):
-            print(stage("Multi-lines brackets detected! Skipping the layers protecting the chunks.", '!!!', Col.light_red, Col.light_red))
+            print(stage("Đã phát hiện dấu ngoặc nhiều dòng! Bỏ qua các lớp bảo vệ các khối.", '!!!', Col.light_red, Col.light_red))
             randlines, shell = False, False
 
         if randlines:
-            p("Adding random lines between each chunk...")
+            p("Thêm các dòng ngẫu nhiên giữa mỗi đoạn...")
             self.RandLines()
 
         if shell:
-            p("Adding a shell to each chunk...")
+            p("Thêm một shell vào mỗi đoạn...")
             self.Shell()
 
-        p("Organising everything...")
+        p("Sắp xếp mọi thứ...")
         self.Organise()
 
         # p("Adding anti skid layer...") ;)
-        self.AntiSkid()
+        # self.AntiSkid()
 
         if clean:
-            p("Cleaning the final script!")
+            p("Thu gọn tập lệnh!")
             self.CleanCode()
 
-        p("Compressing the final script...")
+        p("Nén tập lệnh...")
         self.Compress()
 
         if camouflate:
-            p("Camouflating the final script to make it less suspicious...")
+            p("Ngụy trang kịch bản cuối cùng để làm cho nó ít đáng ngờ hơn...")
             self.Camouflate()
         else:
             self.content = ';'.join(self.content)
@@ -136,27 +136,18 @@ class Hyperion:
     def AntiSkid(self):
         if self.camouflate:
             self.content = fr"""
-# GG! You just deobfuscated a file obfuscated with Hyperion
-
-# Congratulations!
-
-# https://github.com/billythegoat356/Hyperion
-
-# by billythegoat356 and BlueRed
-
-
 try:
     if (
         __obfuscator__ != "Hyperion" or
-        __authors__ != ("billythegoat356", "BlueRed") or
-        __github__ != "https://github.com/billythegoat356/Hyperion" or
-        __discord__ != "https://discord.gg/plague" or
-        __license__ != "EPL-2.0" or
-        __code__ != 'print("Hello world!")'
+        __authors__ != "Shisui0711" or
+        __facebook__ != "https://fb.com/khang.0711" or
+        __zalo__ != "0988655794" or
+        __telegram__ != "https://t.me/shisui0711" or
+        __code__ != 'print("Shisui0711")'
     ):
         int('skid')
 except:
-    input("Roses are red\nViolets are blue\nYou are a skid\nNobody likes you")
+    input("Bạn không nên thay đổi tập lệnh\nNó làm cho tập lệnh hoạt động sai")
     __import__('sys').exit()
 
 
@@ -194,7 +185,7 @@ except:
     def RenameImports(self):
         _imports = self._gather_imports()
         if _imports == False:
-            print(stage("Star import detected! Skipping the renaming of imported libraries and variables.", '!!!', Col.light_red, Col.light_red))
+            print(stage("Đã phát hiện khai báo thư viện! Bỏ qua việc đổi tên các thư viện và biến đã nhập.", '!!!', Col.light_red, Col.light_red))
             # raise self.StarImport()
             return False
         imports = []
@@ -424,10 +415,10 @@ from math import prod as {gen[5]}
 __obfuscator__ = 'Hyperion'
 __authors__ = 'Shisui0711'
 __facebook__ = 'https://fb.com/khang.0711'
-__telegram__ = 'https://t.me/shisui0711'
 __zalo__ = '0988655794'
+__telegram__ = 'https://t.me/shisui0711'
 
-__code__ = 'print("Encoded")'
+__code__ = 'print("Shisui0711")'
 
 
 {gen[11]}, {gen[12]}, {gen[13]}, {gen[14]}, {gen[15]}, {gen[17]}, {gen[24]} = exec, str, tuple, map, ord, globals, type
@@ -489,7 +480,7 @@ if __name__ == '__main__':
 
     class StarImport(Exception):
         def __init__(self):
-            super().__init__("Star Import is forbidden, please update your script")
+            super().__init__("Lỗi! Hãy cập nhật tập lệnh lên bản mới nhất")
 
 
 
@@ -517,7 +508,7 @@ if __name__ == '__main__':
         ))
     
     def _randvar2(self):
-        return ''.join(choice('billythegoat356BlueRed') for _ in range(randint(5, 20)))
+        return ''.join(choice('Shisui0711') for _ in range(randint(5, 20)))
 
     def _randglob(self):
         return choice((
@@ -906,12 +897,11 @@ from getpass import getpass
 
 
 text = r"""
-
 ██   ██ ██   ██  █████  ███    ██  ██████  
 ██  ██  ██   ██ ██   ██ ████   ██ ██       
 █████   ███████ ███████ ██ ██  ██ ██   ███ 
 ██  ██  ██   ██ ██   ██ ██  ██ ██ ██    ██ 
-██   ██ ██   ██ ██   ██ ██   ████  ██████       
+██   ██ ██   ██ ██   ██ ██   ████  ██████          
 """[:-1]
 
 banner = """
@@ -959,7 +949,7 @@ def main():
     print()
     print(Colorate.Diagonal(Colors.DynamicMIX((purple, dark)), Center.XCenter(banner)))
     print('\n')
-    file = input(stage(f"Nhập đường dẫn file cần mã hóa: {dark}-> {Col.reset}", "?", col2 = bpurple)).replace('"','').replace("'","")
+    file = input(stage(f"Nhập đường dẫn file cần mã hóa {dark}-> {Col.reset}", "?", col2 = bpurple)).replace('"','').replace("'","")
     print('\n')
 
 
@@ -968,13 +958,14 @@ def main():
             script = f.read().decode('utf-8')
         filename = file.split('\\')[-1]
     except:
-        input(f" {Col.Symbol('!', light, dark)} {Col.light_red}File không hợp lệ!{Col.reset}")
+        input(f" {Col.Symbol('!', light, dark)} {Col.light_red}Invalid file!{Col.reset}")
         exit()
 
-    skiprenaming = input(stage(f"Bỏ qua việc đổi tên thư viện và biến {dark}[{light}y{dark}/{light}n{dark}] -> {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
+    skiprenaming = input(stage(f"Bỏ qua việc đổi tên thư viện {dark}[{light}y{dark}/{light}n{dark}] -> {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
     print()
     skipchunks = input(stage(f"Bỏ qua việc bảo vệ khối {dark}[{light}y{dark}/{light}n{dark}] -> {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
     # camouflate = input(stage(f"Camouflate the final code to make it less suspicious {dark}[{light}y{dark}/{light}n{dark}] {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
+
     renvars, renlibs = (False, False) if skiprenaming else (True, True)
     randlines, shell = (False, False) if skipchunks else (True, True)
 
@@ -989,7 +980,7 @@ def main():
         f.write(script)
     
     print('\n')
-    getpass(stage(f"Hoàn tất quá trình mã hóa trong {light}{now} giây{bpurple}.{Col.reset}", "?", col2 = bpurple))
+    getpass(stage(f"Mã hóa thành công trong {light}{now} giây{bpurple}.{Col.reset}", "?", col2 = bpurple))
     # dire aussi l ancienne et nouvelle taille du fichier
 
 

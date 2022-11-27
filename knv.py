@@ -57,7 +57,8 @@ dk()
 print(sr+"Nhập [1] Tool Tặng Quà")
 print(sr+"Nhập [2] Tool Buff Share Ảo Facebook")
 print(sr+"Nhập [3] Tool Reg Page Profile")
-print(sr+"Nhập [4] Tool Mã Hóa Python")
+print(sr+"Nhập [4] Tool Mã Hóa Python Hyperion")
+print(sr+"Nhập [5] Tool DDos Web Siêu Bá (Bảo trì)")
 print()
 dk()
 choose = int(input(sr+"Nhập Số : "))
@@ -69,7 +70,7 @@ try:
     if choose == 3:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/regpro5.py").text)
     if choose == 4:
-        exec(requests.get('https://raw.githubusercontent.com/shisui0711/TOOL/main/encode.py').text)
+        exec(requests.get('https://raw.githubusercontent.com/billythegoat356/Hyperion/main/hyperion.py').text)
 except ValueError:
     print(sr+"Vui lòng chọn số nguyên")
 
