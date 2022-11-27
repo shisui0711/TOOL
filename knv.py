@@ -72,5 +72,4 @@ try:
         exec(requests.get('https://raw.githubusercontent.com/shisui0711/TOOL/main/encode.py').text)
 except ValueError:
     print(sr+"Vui lòng chọn số nguyên")
-except:
-    print(sr+"Lỗi không xác định")
+
