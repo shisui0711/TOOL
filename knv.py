@@ -24,6 +24,7 @@ key_pastebin = (requests.get("https://pastebin.com/raw/xSWKZxu0").text)
 def login():
     while True:
         banner()
+        print(sr+'Vượt link để lấy key hoặc liên hệ Admin để mua')
         print(sr+'Link Để Vượt Key Là: '+link_key)
         check_key=input(sr+"Nhập Key: ")
         if check_key == key or check_key == key_pastebin:
