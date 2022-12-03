@@ -34,7 +34,6 @@ if secret_key !="":
 acc=uid+'|'+pas+secret_key
 print(sr+"Định Dạng Token [EAAD/EAAV/EAAAAU/EAAC/EAAAAAY]")
 loai = input(sr+"Vui Lòng Nhập Định Dạng Token Muốn Get: ")
-
 re=requests.get(f"https://api.maihuybao.live/api/getToken?account={acc}&type={loai}").json()
 try:
 	token = re["access_token"]
