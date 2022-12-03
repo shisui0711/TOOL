@@ -44,18 +44,15 @@ class MainSHare:
     ║ ➽ Zalo : 0988655794             ║
     ║ ➽ Youtube : Shisui0711          ║
     ║ ➽ Bản Quyền : Shisui0711        ║
-    ║                                 ║
+    ║ ➽ Share Ảo Token EAAD           ║
     ╚═════════════════════════════════╝                                                                                             
                                \n\n'''
         print(Colorate.Vertical(Colors.DynamicMIX((Col.light_green, Col.light_blue)), Center.XCenter(banner)))
-        if self.total == '0':
-            print(self.format_print_error("</>", "Số Token Không Đủ. Vui lòng mở file và nhập thêm mỗi token một dòng"))
-            sleep(3)
-            sys.exit()
     def share(self, id_post, token):
-            rq = random.choice([requests.get, requests.post])
+            rq = random.choice([requests.get,requests.post])
             dt_now = datetime.datetime.now()
             response = rq(f'https://graph.facebook.com/me/feed?method=POST&link=https://m.facebook.com/{id_post}&published=0&access_token={token}').json()
+            print(response)
             if 'id' in response:
                 print(self.format_print("</>",f"{dt_now.strftime('%H:%M:%S')}: {response['id']}"))
             else:
@@ -71,7 +68,7 @@ class MainSHare:
             except:
                 quit(self.format_print_error("</>", 'Dữ liệu file "token.txt" không hợp lệ'))
             while True:
-                main.banner()
+                self.banner()
                 try:
                     print(self.format_print("</>","Số Token:"+self.total)) 
                     id_post = input(self.format_input("</>",f"Nhập ID Bài Viết: "))
@@ -79,7 +76,7 @@ class MainSHare:
                     if id_post != '' and threa > 0:
                         break
                     else:
-                        print(self.format_print("</>", "Số luồng > 0"))
+                        print(self.format_print("</>", "Vui lòng nhập đúng dữ liệu"))
                         time.sleep(3)
                 except:
                     print(self.format_print("</>", "Lỗi dữ liệu đầu vào"))
@@ -95,6 +92,7 @@ if __name__ == "__main__":
         with open(__dir__/'token.txt',"a"):
             pass
         main = MainSHare()
+        main.banner()
         print(main.format_print("</>","Số Token:"+main.total))
         print(main.format_print("1","Chạy Số Token Có Sẵn"))
         print(main.format_print("2","Nhập Thêm Token"))

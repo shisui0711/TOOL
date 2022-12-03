@@ -9,6 +9,9 @@ import uuid
 import random
 import socket
 phone_while_list=requests.get("https://pastebin.com/raw/iSsAUc5m").text.split()
+s = "\033[1;91m『\033[1;97m亗\033[1;91m』"
+r = "\033[1;97m▶▶\033[1;92m"
+sr = s+r+" "
 class SPAM:
     def __init__(self):
         self.blue = Col.blue
