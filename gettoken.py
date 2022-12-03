@@ -22,10 +22,10 @@ def banner():
     ╚═════════════════════════════════╝                                                                                             
                                \n\n'''
         print(Colorate.Vertical(Colors.DynamicMIX((Col.light_green, Col.light_blue)), Center.XCenter(banner)))
-banner()
 s = "\033[1;91m『\033[1;97m亗\033[1;91m』"
 r = "\033[1;97m▶▶\033[1;92m"
 sr = s+r+" "
+banner()
 acc=input(sr+"Nhập Định Dạng UID|PASS|2FA : ")
 print(sr+"Định Dạng Token [EAAD/EAAV/EAAAAU/EAAC/EAAAAAY]")
 loai = input(sr+"Vui Lòng Nhập Định Dạng Token Muốn Get: ")
