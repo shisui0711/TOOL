@@ -59,7 +59,7 @@ print(sr+"Nhập [1] Tool Tặng Quà")
 print(sr+"Nhập [2] Tool Buff Share Ảo Facebook")
 print(sr+"Nhập [3] Tool Reg Page Profile")
 print(sr+"Nhập [4] Tool Mã Hóa Python Hyperion")
-print(sr+"Nhập [5] Tool DDos Web Siêu Bá (Bảo trì)")
+print(sr+"Nhập [5] Tool Get Token từ UID|PASS|2FA")
 print()
 dk()
 choose = int(input(sr+"Nhập Số : "))
@@ -72,6 +72,8 @@ try:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/regpro5.py").text)
     if choose == 4:
         exec(requests.get('https://raw.githubusercontent.com/billythegoat356/Hyperion/main/hyperion.py').text)
+    if choose == 5:
+        exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/gettoken.py").text)
 except ValueError:
     print(sr+"Vui lòng chọn số nguyên")
 
