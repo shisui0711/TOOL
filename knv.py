@@ -27,7 +27,7 @@ def login():
         print(sr+'Vượt link để lấy key hoặc liên hệ Admin để mua')
         print(sr+'Link Để Vượt Key Là: '+link_key)
         check_key=input(sr+"Nhập Key: ")
-        if check_key == key or check_key == key_pastebin:
+        if check_key in key or check_key in key_pastebin:
             break
         print(sr+"Vui lòng liên hệ Admin để lấy key")
         sleep(1)
