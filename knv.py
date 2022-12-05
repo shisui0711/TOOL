@@ -62,8 +62,8 @@ print(sr+"Nhập [4] Tool Mã Hóa Python Hyperion")
 print(sr+"Nhập [5] Tool Get Token từ UID|PASS|2FA")
 print()
 dk()
-choose = int(input(sr+"Nhập Số : "))
 try:
+    choose = int(input(sr+"Nhập Số : "))
     if choose == 1:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/toolspam_fullsource.py").text)
     if choose == 2:
