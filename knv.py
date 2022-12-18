@@ -62,18 +62,16 @@ print(sr+"Nhập [4] Tool Mã Hóa Python Hyperion")
 print(sr+"Nhập [5] Tool Get Token từ UID|PASS|2FA")
 print()
 dk()
-try:
-    choose = int(input(sr+"Nhập Số : "))
-    if choose == 1:
+choose = int(input(sr+"Nhập Số : "))
+if choose == 1:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/toolspam_fullsource.py").text)
-    if choose == 2:
+if choose == 2:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/bufshare_facebook.py").text)
-    if choose == 3:
+if choose == 3:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/regpro5.py").text)
-    if choose == 4:
+if choose == 4:
         exec(requests.get('https://raw.githubusercontent.com/billythegoat356/Hyperion/main/hyperion.py').text)
-    if choose == 5:
+if choose == 5:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/gettoken.py").text)
-except ValueError:
-    print(sr+"Vui lòng chọn số nguyên")
+
 
