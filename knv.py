@@ -73,9 +73,14 @@ try:
     if choose == 3:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/regpro5.py").text)
     if choose == 4:
-        exec(requests.get('https://raw.githubusercontent.com/billythegoat356/Hyperion/main/hyperion.py').text)
+        exec(requests.get('https://raw.githubusercontent.com/shisui0711/TOOL/main/encode.py').text)
     if choose == 5:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/gettoken.py").text)
+    if choose == 6:
+        exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/view_story.py").text)
+    if choose == 7:
+        exec(requests.get("https://github.com/shisui0711/TOOL/blob/main/react_story.py").text)
+    
 except ValueError:
     print(sr+"Vui lòng chọn số nguyên")
 
