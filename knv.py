@@ -76,8 +76,6 @@ try:
         exec(requests.get('https://raw.githubusercontent.com/billythegoat356/Hyperion/main/hyperion.py').text)
     if choose == 5:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/gettoken.py").text)
-    if choose == 6:
-        exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/gettoken.py").text)
 except ValueError:
     print(sr+"Vui lòng chọn số nguyên")
 
