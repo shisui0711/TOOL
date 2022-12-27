@@ -1,35 +1,30 @@
 import os
 try:
 	import requests,bs4,pystyle,pathlib,colorama,inquirer,prettytable
-except:
+except ImportError or ModuleNotFoundError:
 	os.system('pip install requests && pip install bs4 && pip install pystyle && pip install pathlib && pip install colorama && pip install inquirer && pip install prettytable')
 import json
 from time import sleep
 import sys
 import requests
 from pystyle import *
-from time import strftime
-ngay=int(strftime('%d'))
-key1=str(ngay*1246546+23472)
-key = 'NVK'+key1
-url = 'https://khangpro.site/key.html?key='+key
-token_link1s = 'c1a994eec33d0e0f31ed05afe1f42fb57dfc0202'
-link1s = requests.get(f'https://link1s.com/api?api={token_link1s}&url={url}').json()
-if link1s['status']=="error": 
-	print(link1s['message'])
-	quit()
-else:
-	link_key=link1s['shortenedUrl']
-key_pastebin = (requests.get("https://pastebin.com/raw/xSWKZxu0").text)
+def checkey(key):
+    data = {
+        "key": key
+    }
+    response = requests.post("https://khangpro.site/api/checkey.php",data=data).json()
+    if(response['status'] == 'correct'):
+        return True
+    else: 
+        return False
 def login():
     while True:
         banner()
-        print(sr+'Vượt link để lấy key hoặc liên hệ Admin để mua')
-        print(sr+'Link Để Vượt Key Là: '+link_key)
-        check_key=input(sr+"Nhập Key: ")
-        if check_key in key or check_key in key_pastebin:
+        print(sr+'Lấy Key Tại: khangpro.site/getkey.php')
+        key=input(sr+"Nhập Key: ")
+        if checkey(key):
             break
-        print(sr+"Vui lòng liên hệ Admin để lấy key")
+        print(sr+"Key Không Đúng Hoặc Đã Hết Hạn")
         sleep(1)
 def banner():
         os.system("cls" if os.name == "nt" else "clear")
