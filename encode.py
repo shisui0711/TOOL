@@ -961,13 +961,15 @@ def main():
         input(f" {Col.Symbol('!', light, dark)} {Col.light_red}Invalid file!{Col.reset}")
         exit()
 
-    skiprenaming = input(stage(f"Bỏ qua việc đổi tên thư viện {dark}[{light}y{dark}/{light}n{dark}] -> {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
-    print()
-    skipchunks = input(stage(f"Bỏ qua việc bảo vệ khối {dark}[{light}y{dark}/{light}n{dark}] -> {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
+    # skiprenaming = input(stage(f"Bỏ qua việc đổi tên thư viện {dark}[{light}y{dark}/{light}n{dark}] -> {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
+    # print()
+    # skipchunks = input(stage(f"Bỏ qua việc bảo vệ khối {dark}[{light}y{dark}/{light}n{dark}] -> {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
     # camouflate = input(stage(f"Camouflate the final code to make it less suspicious {dark}[{light}y{dark}/{light}n{dark}] {Col.reset}", "?")).replace('"','').replace("'","") == 'y'
 
-    renvars, renlibs = (False, False) if skiprenaming else (True, True)
-    randlines, shell = (False, False) if skipchunks else (True, True)
+    # renvars, renlibs = (False, False) if skiprenaming else (True, True)
+    # randlines, shell = (False, False) if skipchunks else (True, True)
+    renvars, renlibs = (False, False)
+    randlines, shell = (False, False)
 
     print('\n')
 
@@ -976,12 +978,11 @@ def main():
     script = Hype.content
     now = round(time() - now, 2)
 
-    with open(f'obf-{filename}', mode='w') as f:
+    with open(f'obfuscator-{filename}', mode='w') as f:
         f.write(script)
     
     print('\n')
     getpass(stage(f"Mã hóa thành công trong {light}{now} giây{bpurple}.{Col.reset}", "?", col2 = bpurple))
-    # dire aussi l ancienne et nouvelle taille du fichier
 
 
 
