@@ -52,7 +52,6 @@ class MainSHare:
             rq = random.choice([requests.get,requests.post])
             dt_now = datetime.datetime.now()
             response = rq(f'https://graph.facebook.com/me/feed?method=POST&link=https://m.facebook.com/{id_post}&published=0&access_token={token}').json()
-            print(response)
             if 'id' in response:
                 print(self.format_print("</>",f"{dt_now.strftime('%H:%M:%S')}: {response['id']}"))
             else:

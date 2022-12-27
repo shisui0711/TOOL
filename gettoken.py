@@ -26,12 +26,14 @@ s = "\033[1;91m『\033[1;97m亗\033[1;91m』"
 r = "\033[1;97m▶▶\033[1;92m"
 sr = s+r+" "
 banner()
-uid=input(sr+"Nhập UID: ")
-pas=input(sr+"Nhập PASS: ")
-secret_key=input(sr+"Nhập 2FA: ")
-if secret_key !="":
-    secret_key= '|'+secret_key
-acc=uid+'|'+pas+secret_key
+acc=input(sr+"Nhập UID|PASS|2FA: ")
+# uid=input(sr+"Nhập UID: ")
+# pas=input(sr+"Nhập PASS: ")
+# secret_key=input(sr+"Nhập 2FA: ")
+# if secret_key !="":
+#     secret_key= '|'+secret_key
+# acc=uid+'|'+pas+secret_key
+print(acc)
 print(sr+"Định Dạng Token [EAAD/EAAV/EAAAAU/EAAC/EAAAAAY]")
 loai = input(sr+"Vui Lòng Nhập Định Dạng Token Muốn Get: ")
 re=requests.get(f"https://api.maihuybao.live/api/getToken?account={acc}&type={loai}").json()
