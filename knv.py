@@ -74,7 +74,7 @@ try:
     if choose == 6:
         exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/view_story.py").text)
     if choose == 7:
-        exec(requests.get("https://github.com/shisui0711/TOOL/blob/main/react_story.py").text)
+        exec(requests.get("https://raw.githubusercontent.com/shisui0711/TOOL/main/react_story.py").text)
     
 except ValueError:
     print(sr+"Vui lòng chọn số nguyên")
