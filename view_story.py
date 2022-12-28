@@ -82,15 +82,22 @@ class ReactStory:
         linkstr = input(self.format_input('Nhập Link Story:'))
         data = linkstr.split('/')[5].split('/?')[0]
         soluongview = int(input(self.format_input('Nhập Số Lượng View Cần Tăng:')))
-        for x in range(soluongview):
-            dem=dem+1
-            threading.Thread(target=self.buffview,args=(x, data, linkstr, self.cookie, )).start()
-    def buffview(self,x, thanhphan9, url_str, cookie):
+        while True:
+            for x in range(int(len(self.list_id_name_page))):
+                self.dem=self.dem+1
+                threading.Thread(target=self.buffview,args=(x, self.dem, linkstr, data, )).start()
+                if self.dem == soluongview:
+                    sleep(3)
+                    exit(self.format_print_success('Đã Hoàn Thành '+str(soluongview)+' View '))
+        # for x in range(soluongview):
+        #     self.dem=self.dem+1
+        #     threading.Thread(target=self.buffview,args=(x, data, linkstr, self.cookie, )).start()
+    def buffview(self,x, dem, thanhphan9, url_str):
         time = datetime.now().strftime("%H:%M:%S")
         uid_page = self.list_id_name_page[x].split('|')[0]
         name_page = self.list_id_name_page[x].split('|')[1]
         list1 = (f'i_user={uid_page};')
-        cookie9 = (f'{cookie}{list1}')
+        cookie9 = (f'{self.cookie}{list1}')
         headers = {
             'authority': 'www.facebook.com',
             'accept': '*/*',
@@ -124,7 +131,7 @@ class ReactStory:
         }
 
         runview = requests.post('https://www.facebook.com/api/graphql/', headers=headers, data=data).json()
-        print('\033[1;31m[\033[0;93m'+str(x+1)+'\033[1;31m] | \033[1;36m'+str(time)+' \033[1;31m| \033[0;93mSUCCESS \033[1;31m| \033[1;35m'+str(uid_page)+' \033[1;31m| \033[1;34m'+str(name_page)+' \033[1;31m| \033[1;37m'+str(thanhphan9)+'')
+        print('\033[1;31m[\033[0;93m'+str(dem)+'\033[1;31m] | \033[1;36m'+str(time)+' \033[1;31m| \033[0;93mSUCCESS \033[1;31m| \033[1;35m'+str(uid_page)+' \033[1;31m| \033[1;34m'+str(name_page)+' \033[1;31m| \033[1;37m'+str(thanhphan9)+'')
 if __name__ == "__main__":   
     try:
         ReactStory().run()

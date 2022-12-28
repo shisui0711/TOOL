@@ -114,6 +114,7 @@ class ReactStory:
                 self.dem=self.dem+1
                 threading.Thread(target=self.tangcxstr,args=(x, self.dem, linkstr, data, )).start()
                 if self.dem == soluongcx:
+                    sleep(3)
                     exit(self.format_print_success('Đã Hoàn Thành '+str(soluongcx)+' Cảm Xúc '))
     def tangcxstr(self,x, dem, linkstr, dataurlstr):
         camxuc = self.listcx[0]
